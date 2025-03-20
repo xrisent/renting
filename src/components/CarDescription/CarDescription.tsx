@@ -4,24 +4,10 @@ import CarPricing from "@/shared/CarPricing/CarPricing";
 import CarTerms from "@/shared/CarTerms/CarTerms";
 import "./CarDescription.scss";
 
-interface CarProps {
-  name: string;
-  year: number;
-  description: string;
-  engineVolume: number | string;
-  fuelType: string;
-  seats: number;
-  transmission: string;
-  interior: string;
-  pricePerDay: number;
-  priceFor5Days: number;
-  priceFor10Days: number;
-  driverSurcharge: number;
-  mainImage: string;
-  additionalImages: string[];
-}
+import { CarProps } from "@/entities/car";
 
 const CarDescription: React.FC<{ car: CarProps }> = ({ car }) => {
+    console.log(car.additionalImages)
     return (
       <div className="car-description">
         <div className="car-description__short-info">

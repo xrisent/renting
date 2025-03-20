@@ -2,18 +2,9 @@
 import './CarDetails.scss'
 import React from "react";
 
-interface CarDetailsProps {
-  car: {
-    name: string
-    engineVolume: number | string;
-    fuelType: string;
-    seats: number;
-    transmission: string;
-    interior: string;
-  };
-}
+import { CarProps } from "@/entities/car";
 
-const CarDetails: React.FC<CarDetailsProps> = ({ car }) => {
+const CarDetails: React.FC<{car: CarProps}> = ({ car }) => {
   return (
     <div className="car-details">
       <h3>Детали {car.name}</h3>

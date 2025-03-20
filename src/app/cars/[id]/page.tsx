@@ -6,6 +6,7 @@ import "./singleCar.scss";
 import { Banner } from "@/components/Banner/Banner";
 import FormForRent from "@/components/FormForRent/FormForRent";
 import { useParams } from "next/navigation";
+import CarPhotos from "@/components/CarPhotos/CarPhotos";
 
 const Car: React.FC = () => {
     const { id } = useParams();
@@ -40,6 +41,8 @@ const Car: React.FC = () => {
                     <div className="singleCarSection__box">
                         <div className="singleCarSection__box__info">
                             <CarDescription car={carData[0]} />
+                            <hr />
+                            <CarPhotos car={carData[0]}/>
                         </div>
                         <FormForRent />
                     </div>

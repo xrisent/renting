@@ -1,16 +1,9 @@
 import './CarPricing.scss'
 import React from "react";
 
-interface CarPricingProps {
-  car: {
-    pricePerDay: number;
-    priceFor5Days: number;
-    priceFor10Days: number;
-    driverSurcharge: number;
-  };
-}
+import { CarProps } from "@/entities/car";
 
-const CarPricing: React.FC<CarPricingProps> = ({ car }) => {
+const CarPricing: React.FC<{car: CarProps}> = ({ car }) => {
   return (
     <div className="car-pricing">
       <h3>Цена</h3>
