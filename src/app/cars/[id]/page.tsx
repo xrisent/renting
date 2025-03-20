@@ -30,14 +30,16 @@ const Car: React.FC = () => {
         return <div>Loading...</div>;
     }
 
+    console.log(carData[0].mainImage)
+
     return (
         <>
-            <Banner image="https://ak-sai.com/wp-content/uploads/jeep-1920x500.jpg" h3="Аренда автомобилей"/>
+            <Banner image={carData[0].mainImage} h3="Аренда автомобилей"/>
             <section id="singleCarSection">
                 <div className="container">
                     <div className="singleCarSection__box">
                         <div className="singleCarSection__box__info">
-                            <CarDescription car={carData} />
+                            <CarDescription car={carData[0]} />
                         </div>
                         <FormForRent />
                     </div>

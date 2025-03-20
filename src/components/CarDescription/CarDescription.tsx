@@ -17,6 +17,8 @@ interface CarProps {
   priceFor5Days: number;
   priceFor10Days: number;
   driverSurcharge: number;
+  mainImage: string;
+  additionalImages: string[];
 }
 
 const CarDescription: React.FC<{ car: CarProps }> = ({ car }) => {

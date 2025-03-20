@@ -52,6 +52,7 @@ export async function POST(req) {
     }
 
     const mainImagePath = path.join(uploadDir, mainImage.name);
+    const mainRelativePath = `/uploads/${mainImage.name}`;
     const mainBuffer = await mainImage.arrayBuffer();
     fs.writeFileSync(mainImagePath, Buffer.from(mainBuffer));
 
@@ -60,9 +61,10 @@ export async function POST(req) {
 
     for (const file of imageFiles) {
       const imagePath = path.join(uploadDir, file.name);
+      const imageRelativePath = `/uploads/${file.name}`;
       const buffer = await file.arrayBuffer();
       fs.writeFileSync(imagePath, Buffer.from(buffer));
-      additionalImages.push(imagePath);
+      additionalImages.push(imageRelativePath);
     }
 
     const data = {
@@ -78,7 +80,7 @@ export async function POST(req) {
       priceFor5Days: priceFor5Days || 0,
       priceFor10Days: priceFor10Days || 0,
       driverSurcharge: driverSurcharge || 0,
-      mainImage: mainImagePath,
+      mainImage: mainRelativePath,
       additionalImages,
     };
 
