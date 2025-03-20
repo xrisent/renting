@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@prisma/client": "^6.5.0",
+    "axios": "^1.8.4",
     "formik": "^2.4.6",
     "next": "15.2.3",
     "next-connect": "^1.0.0",
