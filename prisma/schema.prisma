@@ -8,17 +8,19 @@ datasource db {
 }
 
 model Car {
-  id             Int     @id @default(autoincrement())
-  name           String
-  year           Int
-  description    String
-  engineVolume   Float
-  fuelType       String
-  seats          Int
-  transmission   String
-  interior       String
-  pricePerDay    Float
-  priceFor5Days  Float
-  priceFor10Days Float
+  id              Int     @id @default(autoincrement())
+  name            String
+  year            Int
+  description     String
+  engineVolume    Float
+  fuelType        String
+  seats           Int
+  transmission    String
+  interior        String
+  pricePerDay     Float
+  priceFor5Days   Float
+  priceFor10Days  Float
   driverSurcharge Float
+  mainImage       String? // URL for the main image (nullable)
+  additionalImages String[] // Array of URLs for additional images
 }

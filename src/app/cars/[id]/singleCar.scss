@@ -1,11 +1,32 @@
-.singleCarSection__box{
-    display: flex;
-    justify-content: space-between;
-    padding-top: 30px;
+#singleCarSection{
+    min-height: 100vh;
 
-    &__info{
-        width: 50%;
+    .container{
+        height: 100%;
     }
 
+    .singleCarSection__box{
+        display: flex;
+        justify-content: space-between;
+        padding-top: 30px;
+        flex-wrap: wrap;
+        gap: 20px;
+        height: 100%;
     
+        &__info{
+            width: 65%;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+    
+    }
+
+    ul{
+        list-style:disc;
+        li{
+            list-style:disc;
+        }
+    }
 }
+

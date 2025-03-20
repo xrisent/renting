@@ -1,0 +1,23 @@
+.car-terms{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    margin-bottom: 20px;
+
+    h4{
+        margin: 15px 0 10px 0;
+    }
+
+    ul{
+        padding-left: 30px;
+    }
+
+    p:last-child{
+        margin-top: 15px;
+    }
+
+    .h4-sm{
+        margin-top: 10px;
+    }
+}
