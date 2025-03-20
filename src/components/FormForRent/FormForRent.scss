@@ -1,0 +1,35 @@
+.form__component {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px 0 20px 30px;
+    width: 350px;
+    height: 700px;
+    border: 1px solid black;
+    border-radius: 10px;
+
+    .small-p{
+        font-size: 13px;
+    }
+
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 14px;
+  }
+  
+  .submit-button {
+    background-color: #1d4ed8;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  
+    &:hover {
+      background-color: #1e40af;
+    }
+  }
+  
