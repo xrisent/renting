@@ -5,7 +5,7 @@ import { Banner } from "@/components/Banner/Banner";
 import FormForRent from "@/components/FormForRent/FormForRent";
 import CarPhotos from "@/components/CarPhotos/CarPhotos";
 
-import { fetchCarData } from "@/features/fetchCarData/fetchCarData";
+import { fetchCarData } from "@/features/fetchCarData";
 
 
 
