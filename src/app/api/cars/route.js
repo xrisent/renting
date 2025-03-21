@@ -22,7 +22,7 @@ export async function GET(req) {
     
     return NextResponse.json(cars, { status: 200 });
   } catch (error) {
-    return NextResponse.json({ error: 'Ошибка получения данных' }, { status: 500 });
+    return NextResponse.json({ error: `Ошибка получения данных ${error}` }, { status: 500 });
   }
 }
 
@@ -109,7 +109,7 @@ export async function PUT(req) {
     });
     return NextResponse.json(updatedCar, { status: 200 });
   } catch (error) {
-    return NextResponse.json({ error: 'Ошибка обновления' }, { status: 500 });
+    return NextResponse.json({ error: `Ошибка обновления ${error}` }, { status: 500 });
   }
 }
 
@@ -122,6 +122,6 @@ export async function DELETE(req) {
     await prisma.car.delete({ where: { id: Number(id) } });
     return NextResponse.json({ message: 'Удалено успешно' }, { status: 200 });
   } catch (error) {
-    return NextResponse.json({ error: 'Ошибка удаления' }, { status: 500 });
+    return NextResponse.json({ error: `Ошибка удаления ${error}` }, { status: 500 });
   }
 }

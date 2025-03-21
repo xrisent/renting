@@ -5,7 +5,7 @@ export const Header: React.FC = () => {
     return <header>
         <div className="container">
             <div className="header__box">
-                <Logo width="120px"/>
+                <Logo width={'120'}/>
                 
                 <ul>
                     <li>main</li>

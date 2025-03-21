@@ -7,7 +7,7 @@ interface InputProps extends FieldProps {
   label: string;
 }
 
-export default function InputForForm({ label, field, form, ...props }: InputProps) {
+export default function InputForForm({ label, field, form, ...props }: InputProps) { // eslint-disable-line @typescript-eslint/no-unused-vars
   return (
     <div className="input__shared error">
       <input

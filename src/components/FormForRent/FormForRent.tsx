@@ -51,7 +51,7 @@ export default function FormForRent() {
       validationSchema={validationSchema}
       onSubmit={handleSubmit}
     >
-      {({ errors, touched }) => (
+      {({ errors, touched }) => ( // eslint-disable-line @typescript-eslint/no-unused-vars
         <Form className="form__component">
           <Field label="ФИО" name="fullName" component={InputForForm} required />
           <ErrorMessage name="fullName" component="div" className="error-message" />

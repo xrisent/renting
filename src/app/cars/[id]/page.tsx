@@ -1,20 +1,26 @@
 import React from "react";
-import './singleCar.scss'
+import './singleCar.scss';
 import CarDescription from "@/components/CarDescription/CarDescription";
 import { Banner } from "@/components/Banner/Banner";
 import FormForRent from "@/components/FormForRent/FormForRent";
 import CarPhotos from "@/components/CarPhotos/CarPhotos";
-
 import { fetchCarData } from "@/features/fetchCarData";
+type Params = Promise<{ id: string }>
 
+// Define the component properly using NextPage
+const Car = async function Page(props: {
+        params: Params
+    }) {
 
-
-const Car = async ({ params }: { params: { id: string } }) => {
-    const { id } = await params; 
+    const params = await props.params
+    // Check if params is correctly passed
+    if (!params?.id) {
+        return <div>Invalid car ID</div>;
+    }
 
     let carData = null;
     try {
-        carData = await fetchCarData(id);
+        carData = await fetchCarData(params.id);
     } catch (error) {
         console.error("Ошибка загрузки данных:", error);
     }

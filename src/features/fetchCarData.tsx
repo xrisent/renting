@@ -5,6 +5,6 @@ export async function fetchCarData(id: string) {
         const response = await axios.get(`http://localhost:3000/api/cars`, { params: { id } });
         return response.data;
     } catch (error) {
-        throw new Error("Ошибка загрузки данных");
+        throw new Error(`Ошибка загрузки данных, ${error}`);
     }
 }

@@ -1,3 +1,4 @@
+import Image from "next/image";
 
 
 interface Props{
@@ -5,5 +6,5 @@ interface Props{
 }
 
 export const Logo: React.FC<Props> = props => {
-    return <img style={{width: props.width}} src="https://ak-sai.com/wp-content/uploads/logo200.jpg" alt="logo" />
+    return <Image style={{width: props.width, height: 'fit-content'}} src="https://ak-sai.com/wp-content/uploads/logo200.jpg" alt="logo" width={100} height={35}/>
 };
