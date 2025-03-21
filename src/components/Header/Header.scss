@@ -1,0 +1,36 @@
+header {
+    height: 80px;
+    width: 100%;
+    box-shadow: 0 0px 3px;
+    position: absolute;
+    top: 0;
+    background-color: white;
+
+    .container{
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .header__box{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            align-items: center;
+
+            ul{
+                display: flex;
+                width: 30%;
+                justify-content: space-between;
+
+                li{
+                    padding-bottom: 5px;
+                }
+
+                li:hover{
+                    border-bottom: 1px solid black;
+                }
+            }
+        }
+    }
+}

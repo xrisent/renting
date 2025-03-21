@@ -5,8 +5,8 @@ services:
   db:
     image: postgres:13
     environment:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: admin
+      POSTGRES_USER: rent_admin
+      POSTGRES_PASSWORD: rent_admin
       POSTGRES_DB: bd_rent
     ports:
       - "5432:5432"
@@ -17,7 +17,7 @@ services:
   app:
     build: .
     environment:
-      DATABASE_URL: postgresql://admin:admin@db:5432/bd_rent?schema=public
+      DATABASE_URL: postgresql://rent_admin:rent_admin@db:5432/bd_rent?schema=public
     ports:
       - "3000:3000"
     depends_on:
