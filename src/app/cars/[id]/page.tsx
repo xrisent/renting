@@ -5,6 +5,7 @@ import { Banner } from "@/components/Banner/Banner";
 import FormForRent from "@/components/FormForRent/FormForRent";
 import CarPhotos from "@/components/CarPhotos/CarPhotos";
 import { fetchCarData } from "@/features/fetchCarData";
+import { testCar } from "@/entities/mockdata";
 type Params = Promise<{ id: string }>
 
 // Define the component properly using NextPage

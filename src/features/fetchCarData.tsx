@@ -1,3 +1,4 @@
+import { testCar } from '@/entities/mockdata';
 import axios from 'axios';
 
 export async function fetchCarData(id: string) {
@@ -5,6 +6,8 @@ export async function fetchCarData(id: string) {
         const response = await axios.get(`http://localhost:3000/api/cars`, { params: { id } });
         return response.data;
     } catch (error) {
-        throw new Error(`Ошибка загрузки данных, ${error}`);
+        console.warn(`Ошибка загрузки данных, ${error}`);
+        // Возвращаем моковые данные, если запрос не удался
+        return [testCar];
     }
 }
