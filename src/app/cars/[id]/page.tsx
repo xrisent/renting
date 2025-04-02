@@ -5,7 +5,6 @@ import { Banner } from "@/components/Banner/Banner";
 import FormForRent from "@/components/FormForRent/FormForRent";
 import CarPhotos from "@/components/CarPhotos/CarPhotos";
 import { fetchCarData } from "@/features/fetchCarData";
-import { testCar } from "@/entities/mockdata";
 type Params = Promise<{ id: string }>
 
 // Define the component properly using NextPage
@@ -32,18 +31,21 @@ const Car = async function Page(props: {
 
     return (
         <>
-            <Banner image={carData[0].mainImage} h3="Аренда автомобилей" />
+            <Banner image={carData[0].mainImage} h3="Аренда автомобилей с водителем" />
             <section id="singleCarSection">
                 <div className="container">
                     <div className="singleCarSection__box">
                         <div className="singleCarSection__box__info">
                             <CarDescription car={carData[0]} />
                             <hr />
+                            <br />
                             <CarPhotos car={carData[0]} />
                         </div>
                         <FormForRent />
                     </div>
                 </div>
+                <div className="singleCarSectionBG-left"></div>
+                <div className="singleCarSectionBG-right"></div>
             </section>
         </>
     );

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import logo from '../../../public/images/logo.jpg'
 
 
 interface Props{
@@ -6,5 +7,9 @@ interface Props{
 }
 
 export const Logo: React.FC<Props> = props => {
-    return <Image style={{width: props.width, height: 'fit-content'}} src="https://ak-sai.com/wp-content/uploads/logo200.jpg" alt="logo" width={100} height={35}/>
+    return <div className="Logo">
+    <Image style={{width: props.width, height: 'fit-content'}} src={logo} alt="logo" width={100} height={35}/>
+    <h5>KHaGaN Auto</h5>
+    </div>
+    
 };

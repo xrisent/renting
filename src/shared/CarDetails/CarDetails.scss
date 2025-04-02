@@ -1,7 +1,8 @@
 .car-details{
     width: 100%;
-    margin-bottom: 20px;
-    height: 13%; 
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 
     ul{
         padding-left: 30px;

@@ -53,13 +53,13 @@ export default function FormForRent() {
     >
       {({ errors, touched }) => ( // eslint-disable-line @typescript-eslint/no-unused-vars
         <Form className="form__component">
-          <Field label="ФИО" name="fullName" component={InputForForm} required />
+          <Field label="*ФИО" name="fullName" component={InputForForm} required />
           <ErrorMessage name="fullName" component="div" className="error-message" />
 
-          <Field label="Телефон" name="phone" type="tel" component={InputForForm} required />
+          <Field label="*Телефон" name="phone" type="tel" component={InputForForm} required />
           <ErrorMessage name="phone" component="div" className="error-message" />
 
-          <Field label="Email" name="email" type="email" component={InputForForm} required />
+          <Field label="*Email" name="email" type="email" component={InputForForm} required />
           <ErrorMessage name="email" component="div" className="error-message" />
 
           <h5>Даты поездки:</h5>
@@ -72,7 +72,7 @@ export default function FormForRent() {
           <ErrorMessage name="endDate" component="div" className="error-message" />
 
           <h5>Кол-во человек:</h5>
-          <Field label="Количество человек" name="peopleCount" type="number" component={InputForForm} required min="1" />
+          <Field label="*Количество человек" name="peopleCount" type="number" component={InputForForm} required min="1" />
           <ErrorMessage name="peopleCount" component="div" className="error-message" />
 
           <Field label="Ваше сообщение" name="message" component={TextAreaForForm} rows={4} />
