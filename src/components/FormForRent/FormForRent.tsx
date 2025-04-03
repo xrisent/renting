@@ -5,16 +5,7 @@ import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import InputForForm from "@/shared/InputForForm/InputForForm";
 import TextAreaForForm from "@/shared/TextAreaForForm/TextAreaForForm";
-
-interface FormValues {
-  fullName: string;
-  phone: string;
-  email: string;
-  startDate: string;
-  endDate: string;
-  peopleCount: string;
-  message: string;
-}
+import { FormValues } from '@/entities/formProps';
 
 const validationSchema = Yup.object({
   fullName: Yup.string().required("Введите ФИО"),
