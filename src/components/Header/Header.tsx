@@ -2,6 +2,7 @@
 
 import { Logo } from "@/shared/Logo/Logo";
 import "./Header.scss";
+import { LanguageSwitcher } from "@/shared/LanguageSwitcher/LanguageSwitcher";
 
 export const Header: React.FC = () => {
     const copyToClipboard = (text: string) => {
@@ -9,6 +10,7 @@ export const Header: React.FC = () => {
             alert("Скопировано: " + text);
         });
     };
+
 
     return (
         <header>
@@ -23,6 +25,9 @@ export const Header: React.FC = () => {
                         <a href="tel:+996507844072" onClick={() => copyToClipboard("+996507844072")}>
                             +996 507 844 072
                         </a>
+                        
+                        <LanguageSwitcher/>
+                        
                     </div>
                 </div>
             </div>
@@ -30,3 +35,4 @@ export const Header: React.FC = () => {
         </header>
     );
 };
+
