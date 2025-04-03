@@ -5,12 +5,13 @@ import { Banner } from "@/components/Banner/Banner";
 import FormForRent from "@/components/FormForRent/FormForRent";
 import CarPhotos from "@/components/CarPhotos/CarPhotos";
 import { fetchCarData } from "@/features/fetchCarData";
-type Params = Promise<{ id: string }>
+type Params = Promise<{ id: string, locale: string }>
 
 // Define the component properly using NextPage
 const Car = async function Page(props: {
         params: Params
     }) {
+
 
     const params = await props.params
     // Check if params is correctly passed
@@ -20,7 +21,7 @@ const Car = async function Page(props: {
 
     let carData = null;
     try {
-        carData = await fetchCarData(params.id);
+        carData = await fetchCarData(params.id, params.locale);
     } catch (error) {
         console.error("Ошибка загрузки данных:", error);
     }
@@ -28,21 +29,20 @@ const Car = async function Page(props: {
     if (!carData) {
         return <div>Loading...</div>;
     }
-
     return (
         <main>
-            <Banner image={carData[0].mainImage} h3="Аренда автомобилей с водителем" />
+            <Banner image={carData.mainImage} page='CarDescription' />
             <section id="singleCarSection">
                 <div className="container">
                     <div className="singleCarSection__box">
                         <div className="singleCarSection__box__info">
-                            <CarDescription car={carData[0]} />
+                            <CarDescription car={carData} />
                             <hr />
                             <br />
                         </div>
                         <FormForRent />
                     </div>
-                    <CarPhotos car={carData[0]} />
+                    <CarPhotos car={carData} />
                 </div>
             </section>
         </main>

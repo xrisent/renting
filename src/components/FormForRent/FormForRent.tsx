@@ -6,22 +6,12 @@ import * as Yup from "yup";
 import InputForForm from "@/shared/InputForForm/InputForForm";
 import TextAreaForForm from "@/shared/TextAreaForForm/TextAreaForForm";
 import { FormValues } from '@/entities/formProps';
-
-const validationSchema = Yup.object({
-  fullName: Yup.string().required("Введите ФИО"),
-  phone: Yup.string().required("Введите телефон"),
-  email: Yup.string().email("Некорректный email").required("Введите email"),
-  startDate: Yup.date().required("Выберите дату начала"),
-  endDate: Yup.date()
-    .required("Выберите дату окончания")
-    .min(Yup.ref("startDate"), "Дата окончания не может быть раньше даты начала"),
-  peopleCount: Yup.number()
-    .required("Введите количество человек")
-    .min(1, "Минимум 1 человек"),
-  message: Yup.string(),
-});
+import { useTranslations } from 'next-intl'
 
 export default function FormForRent() {
+  
+  const t = useTranslations("Form")
+
   const initialValues: FormValues = {
     fullName: "",
     phone: "",
@@ -31,6 +21,21 @@ export default function FormForRent() {
     peopleCount: "",
     message: "",
   };
+
+  const validationSchema = Yup.object({
+    fullName: Yup.string().required(t('fullNameError')),
+    phone: Yup.string().required(t("phoneError")),
+    email: Yup.string().email(t("emailError")).required(t("emailError")),
+    startDate: Yup.date().required(t("startDateError")),
+    endDate: Yup.date()
+      .required(t("endDateError"))
+      .min(Yup.ref("startDate"), t("endDateError")),
+    peopleCount: Yup.number()
+      .required(t("peopleCountError"))
+      .min(1, t("peopleCountError")),
+    message: Yup.string(),
+  });
+
 
   const handleSubmit = (values: FormValues) => {
     console.log(values);
@@ -44,33 +49,33 @@ export default function FormForRent() {
     >
       {({ errors, touched }) => ( // eslint-disable-line @typescript-eslint/no-unused-vars
         <Form className="form__component">
-          <Field label="*ФИО" name="fullName" component={InputForForm} required />
+          <Field label={t('fullName')} name="fullName" component={InputForForm} required />
           <ErrorMessage name="fullName" component="div" className="error-message" />
 
-          <Field label="*Телефон" name="phone" type="tel" component={InputForForm} required />
+          <Field label={t('phone')} name="phone" type="tel" component={InputForForm} required />
           <ErrorMessage name="phone" component="div" className="error-message" />
 
-          <Field label="*Email" name="email" type="email" component={InputForForm} required />
+          <Field label={t('email')} name="email" type="email" component={InputForForm} required />
           <ErrorMessage name="email" component="div" className="error-message" />
 
-          <h5>Даты поездки:</h5>
-          <p className='small-p'>От</p>
-          <Field label="Дата поездки от" name="startDate" type="date" component={InputForForm} required />
+          <h5>{t("date")}</h5>
+          <p className='small-p'>{t('from')}</p>
+          <Field label={t('startDate')} name="startDate" type="date" component={InputForForm} required />
           <ErrorMessage name="startDate" component="div" className="error-message" />
 
-          <p className='small-p'>До</p>
-          <Field label="Дата поездки до" name="endDate" type="date" component={InputForForm} required />
+          <p className='small-p'>{t('to')}</p>
+          <Field label={t('endDate')} name="endDate" type="date" component={InputForForm} required />
           <ErrorMessage name="endDate" component="div" className="error-message" />
 
-          <h5>Кол-во человек:</h5>
-          <Field label="*Количество человек" name="peopleCount" type="number" component={InputForForm} required min="1" />
+          <h5>{t('peopleCount')}</h5>
+          <Field label={t('peopleCount')} name="peopleCount" type="number" component={InputForForm} required min="1" />
           <ErrorMessage name="peopleCount" component="div" className="error-message" />
 
-          <Field label="Ваше сообщение" name="message" component={TextAreaForForm} rows={4} />
+          <Field label={t('message')} name="message" component={TextAreaForForm} rows={4} />
           <ErrorMessage name="message" component="div" className="error-message" />
 
           <button type="submit" className="submit-button">
-            Отправить
+          {t('submit')}
           </button>
         </Form>
       )}

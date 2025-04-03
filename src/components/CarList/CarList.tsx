@@ -3,12 +3,17 @@
 import { CarProps } from '@/entities/car';
 import './CarList.scss'
 import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl'
+
 
 interface Props {
     cars: CarProps[],
 }
 
 export const CarList: React.FC<Props> = props => {
+    
+    const t = useTranslations("CarList")
+
     const router = useRouter();
     return <section id='carList'>
                 <div className="container">
@@ -18,7 +23,7 @@ export const CarList: React.FC<Props> = props => {
                             <img src={car.mainImage} alt={car.name} />
                             <h3>{car.name}</h3>
                             <p>{car.year}</p>
-                            <p>Цена начинается от: {car.pricePerDay}$</p>
+                            <p>{t("price")} {car.pricePerDay}$</p>
                         </div>
                         ))}
                     </div>
