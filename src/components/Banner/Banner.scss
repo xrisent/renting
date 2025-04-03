@@ -16,9 +16,11 @@
             padding-bottom: 100px;
 
             h1{
+                // background: rgb(131, 131, 131);
                 background: black;
                 color: white;
-                width: 55%;
+                width: fit-content;
+                padding: 50px 30px;
                 height: 80px;
                 display: flex;
                 justify-content: center;

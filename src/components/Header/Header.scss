@@ -24,6 +24,8 @@ header {
                 justify-content: space-between;
                 align-items: center;
                 width: 30%;
+                z-index: 2;
+                cursor: pointer;
 
                 h5{
                     font-size: 25px;
@@ -38,8 +40,25 @@ header {
                 a{
                     color: black;
                     text-decoration: none;
+                    cursor: pointer;
+                }
+
+                a:hover{
+                    color: rgb(131, 131, 131);
                 }
             }
         }
     }
+}
+
+.header-bg{
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left: -10%;
+    z-index: 1;
+    top: 0;
+    // top: -100px;
+    background: url('/images/bg.svg') right/cover no-repeat;
+
 }

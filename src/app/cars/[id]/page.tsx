@@ -30,7 +30,7 @@ const Car = async function Page(props: {
     }
 
     return (
-        <>
+        <main>
             <Banner image={carData[0].mainImage} h3="Аренда автомобилей с водителем" />
             <section id="singleCarSection">
                 <div className="container">
@@ -39,15 +39,13 @@ const Car = async function Page(props: {
                             <CarDescription car={carData[0]} />
                             <hr />
                             <br />
-                            <CarPhotos car={carData[0]} />
                         </div>
                         <FormForRent />
                     </div>
+                    <CarPhotos car={carData[0]} />
                 </div>
-                <div className="singleCarSectionBG-left"></div>
-                <div className="singleCarSectionBG-right"></div>
             </section>
-        </>
+        </main>
     );
 };
 

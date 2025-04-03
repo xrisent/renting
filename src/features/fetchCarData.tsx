@@ -7,7 +7,6 @@ export async function fetchCarData(id: string) {
         return response.data;
     } catch (error) {
         console.warn(`Ошибка загрузки данных, ${error}`);
-        // Возвращаем моковые данные, если запрос не удался
         return [testCar];
     }
 }

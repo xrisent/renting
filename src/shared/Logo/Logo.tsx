@@ -1,5 +1,6 @@
 import Image from "next/image";
-import logo from '../../../public/images/logo.jpg'
+import logo from '../../../public/images/logobg.png'
+import { useRouter } from "next/navigation";
 
 
 interface Props{
@@ -7,8 +8,10 @@ interface Props{
 }
 
 export const Logo: React.FC<Props> = props => {
-    return <div className="Logo">
-    <Image style={{width: props.width, height: 'fit-content'}} src={logo} alt="logo" width={100} height={35}/>
+    const router = useRouter();
+
+    return <div className="Logo" onClick={()=>router.push('/')}>
+    <Image style={{width: props.width, height: 'fit-content', background: "transparent"}} src={logo} alt="logo" width={100} height={35}/>
     <h5>KHaGaN Auto</h5>
     </div>
     

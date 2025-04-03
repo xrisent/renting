@@ -1,4 +1,5 @@
 export interface CarProps {
+  id: number;
   name: string;
   year: number;
   description: string;

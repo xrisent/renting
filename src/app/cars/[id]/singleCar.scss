@@ -1,5 +1,6 @@
 #singleCarSection{
     min-height: 100vh;
+    background: url('/images/bg.png') top/contain no-repeat;
     position: relative;
 
     .container{
@@ -28,26 +29,6 @@
         li{
             list-style:disc;
         }
-    }
-
-    .singleCarSectionBG-left{
-        width: 70%;
-        height: 60%;
-        position: absolute;
-        left: -110px;
-        z-index: -10;
-        bottom: 0px;
-        background: url('../../../../public/images/Ellipse\ 1\ \(1\).svg') center/contain no-repeat;
-    }
-
-    .singleCarSectionBG-right{
-        width: 55%;
-        height: 55%;
-        position: absolute;
-        right: 0;
-        z-index: -10;
-        top: -100px;
-        background: url('../../../../public/images/bg.svg') center/contain no-repeat;
     }
     
 }
