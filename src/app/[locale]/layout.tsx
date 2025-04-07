@@ -1,10 +1,10 @@
-import '../globals.scss'
+import './globals.scss'
 import { Footer } from "@/components/Footer/Footer";
 import { Header } from "@/components/Header/Header";
 import {NextIntlClientProvider, hasLocale} from 'next-intl';
 import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
- 
+
 export default async function LocaleLayout({
   children,
   params
@@ -17,9 +17,13 @@ export default async function LocaleLayout({
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
- 
+
   return (
     <html lang={locale}>
+      <head>
+        <title>KHaGaN Auto</title>
+        <meta name="description" content="Аренда автомобилей с водителем" />
+      </head>
       <body>
         <NextIntlClientProvider>
           <Header />

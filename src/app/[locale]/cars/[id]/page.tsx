@@ -3,7 +3,6 @@ import './singleCar.scss';
 import CarDescription from "@/components/CarDescription/CarDescription";
 import { Banner } from "@/components/Banner/Banner";
 import FormForRent from "@/components/FormForRent/FormForRent";
-import CarPhotos from "@/components/CarPhotos/CarPhotos";
 import { fetchCarData } from "@/features/fetchCarData";
 type Params = Promise<{ id: string, locale: string }>
 
@@ -31,7 +30,7 @@ const Car = async function Page(props: {
     }
     return (
         <main>
-            <Banner image={carData.mainImage} page='CarDescription' />
+            <Banner images={[carData.mainImage, ...carData.additionalImages]} page='CarDescription' />
             <section id="singleCarSection">
                 <div className="container">
                     <div className="singleCarSection__box">
@@ -42,7 +41,6 @@ const Car = async function Page(props: {
                         </div>
                         <FormForRent />
                     </div>
-                    <CarPhotos car={carData} />
                 </div>
             </section>
         </main>
