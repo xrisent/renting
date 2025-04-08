@@ -1,0 +1,91 @@
+@media screen and (max-width:900px) {
+    #bannerComponent{
+        height: 60vh;
+        position: relative;
+
+        .container{
+            
+            .bannerComponent__box{
+
+                padding-bottom: 60px;
+                
+                h1{
+                    font-size: 28px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 650px) {
+    
+    #bannerComponent{
+
+        .container{
+            
+            .bannerComponent__box{
+
+                padding-bottom: 30px;
+                
+                h1{
+                    font-size: 22px;
+                    padding: 30px 20px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    
+    #bannerComponent{
+
+        .container{
+            
+            .bannerComponent__box{
+                
+                h1{
+                    font-size: 20px;
+                    height: 60px;
+                    padding: 20px 10px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 450px) {
+    
+    #bannerComponent{
+        height: 50vh;
+
+        .container{
+            
+            .bannerComponent__box{
+                
+                h1{
+                    font-size: 24px;
+                    width: 80%;
+                    height: 85px;
+                    padding: 20px 10px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    
+    #bannerComponent{
+
+        .container{
+            
+            .bannerComponent__box{
+                
+                h1{
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}

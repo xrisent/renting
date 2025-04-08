@@ -2,6 +2,7 @@
 
 import { Logo } from "@/shared/Logo/Logo";
 import "./Header.scss";
+import './Header.adaptive.scss';
 import { LanguageSwitcher } from "@/shared/LanguageSwitcher/LanguageSwitcher";
 
 export const Header: React.FC = () => {

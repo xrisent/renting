@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import './Banner.scss';
+import './Banner.adaptive.scss'
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { Autoplay } from 'swiper/modules';

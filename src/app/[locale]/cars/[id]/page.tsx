@@ -4,6 +4,7 @@ import CarDescription from "@/components/CarDescription/CarDescription";
 import { Banner } from "@/components/Banner/Banner";
 import FormForRent from "@/components/FormForRent/FormForRent";
 import { fetchCarData } from "@/features/fetchCarData";
+import './singleCar.adaptive.scss';
 type Params = Promise<{ id: string, locale: string }>
 
 // Define the component properly using NextPage
