@@ -7,6 +7,7 @@ import InputForForm from "@/shared/InputForForm/InputForForm";
 import TextAreaForForm from "@/shared/TextAreaForForm/TextAreaForForm";
 import { FormValues } from '@/entities/formProps';
 import { useTranslations } from 'next-intl'
+import axios from 'axios';
 
 export default function FormForRent() {
   
@@ -37,8 +38,17 @@ export default function FormForRent() {
   });
 
 
-  const handleSubmit = (values: FormValues) => {
-    console.log(values);
+  const handleSubmit = async (values: FormValues, { resetForm }: { resetForm: () => void }) => {
+    try {
+      const response = await axios.post('/api/notify', JSON.stringify(values), {
+        headers: { 'Content-Type': 'application/json' }
+      });
+  
+      console.log('Form sent successfully:', response.data);
+      resetForm();
+    } catch (error) {
+      console.error('Error sending form:', error);
+    }
   };
 
   return (
