@@ -34,8 +34,11 @@
             .header__box {
 
                 .Logo{
-                    width: 41%;
                     gap: 10px;
+
+                    h5{
+                        font-size: 20px;
+                    }
                 }
                 
                 a{
@@ -44,6 +47,22 @@
 
                 &-right{
                     width: fit-content;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 650px) {
+    header {
+
+        .container {
+            
+            .header__box {
+
+                .Logo{
+                    
+                    width: 50%;
                 }
             }
         }
@@ -73,6 +92,7 @@
             .header__box {
 
                 .Logo{
+
                     h5{
                         font-size: 20px;
                     }

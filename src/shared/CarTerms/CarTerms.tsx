@@ -17,6 +17,7 @@ const CarTerms: React.FC = () => {
         <li>{t("li5")}</li>
         <li>{t("li6")}</li>
         <li>{t("li7")}</li>
+        <li>{t("li8")}</li>
       </ul>
       <br/>
       <p>{t('p1')}</p>

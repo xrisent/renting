@@ -23,7 +23,11 @@
             .carList__box{
 
                 .carCard{
-                    height: 330px;
+                    height: 300px;
+
+                    h3{
+                        font-size: 16px;
+                    }
 
                     img{
                         width: 90%;;
@@ -64,9 +68,10 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    height: 400px;
                 }
                 .carCard{
-                    height: 480px;
+                    height: 100%;
                     width: 90%;
                 }
             }

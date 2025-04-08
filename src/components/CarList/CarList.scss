@@ -1,6 +1,6 @@
 #carList {
     min-height: 100vh;
-    background: url('/images/bg.png') top/cover no-repeat;
+    background: url('/images/bg.webp') top/cover no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,7 +39,7 @@
                 img {
                     height: 50%;
                     object-fit: cover;
-                    width: 70%;
+                    width: 80%;
                 }
             }
 
