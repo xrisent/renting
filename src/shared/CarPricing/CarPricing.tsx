@@ -2,17 +2,24 @@ import './CarPricing.scss'
 import React from "react";
 
 import { CarProps } from "@/entities/car";
+import { useTranslations } from 'next-intl'
 
 const CarPricing: React.FC<{car: CarProps}> = ({ car }) => {
+
+  const t = useTranslations("CarPrice")
+
   return (
     <div className="car-pricing">
       <h3>Цена</h3>
       <ul>
-        <li><strong>Цена за 1 день:</strong> ${car.pricePerDay}</li>
-        <li><strong>Цена за 5 дней:</strong> ${car.priceFor5Days}</li>
-        <li><strong>Цена за 10 дней и более:</strong> ${car.priceFor10Days}</li>
-        <li><strong>Доплата за водителя:</strong> ${car.driverSurcharge} в день</li>
+        <li><strong>{t("days1")}:</strong> ${car.pricePerDay}</li>
+        <li><strong>{t("days3")}:</strong> ${car.priceFor5Days}</li>
+        <li><strong>{t("days6")}:</strong> ${car.priceFor10Days}</li>
+        <li><strong>{t("days10")}:</strong> {t("days10terms")}</li>
       </ul>
+      <br/>
+      <p>{t('p1')}</p>
+      <p>{t('p2')}</p>
     </div>
   );
 };

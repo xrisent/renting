@@ -7,16 +7,13 @@ import "./CarDescription.scss";
 import { CarProps } from "@/entities/car";
 
 const CarDescription: React.FC<{ car: CarProps }> = ({ car }) => {
-    console.log(car.additionalImages)
     return (
       <div className="car-description">
-        <div className="car-description__short-info">
-            <h2 className="title">{car.name} ({car.year})</h2>
-            <p className="description">{car.description}</p>
-        </div>
+        <h2 className="title">{car.name} ({car.year})</h2>
         <CarDetails car={car} />
-        <CarPricing car={car} />
+        <p className="description" dangerouslySetInnerHTML={{ __html: car.description.replace(/\n/g, '<br/>') }} />
         <CarTerms />
+        <CarPricing car={car} />
       </div>
     );
 };

@@ -1,0 +1,20 @@
+@media screen and (max-width: 1050px) {
+    #singleCarSection {
+
+        .container{
+    
+            .singleCarSection__box{
+                flex-direction: column;
+    
+                &__info{
+                    width: 100%;
+                }
+    
+                .form__component{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+

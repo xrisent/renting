@@ -1,16 +1,30 @@
 import './CarTerms.scss'
 import React from "react";
+import { useTranslations } from 'next-intl'
 
 const CarTerms: React.FC = () => {
+
+  const t = useTranslations("CarDescription")
+
   return (
     <div className="car-terms">
-      <h4>В стоимость входит:</h4>
+      <h4>{t("h4")}:</h4>
       <ul>
-        <li>Страховка автомобиля</li>
-        <li>ТО автомобиля</li>
+        <li>{t("li1")}</li>
+        <li>{t("li2")}</li>
+        <li>{t("li3")}</li>
+        <li>{t("li4")}</li>
+        <li>{t("li5")}</li>
+        <li>{t("li6")}</li>
+        <li>{t("li7")}</li>
+        <li>{t("li8")}</li>
       </ul>
+      <br/>
+      <p>{t('p1')}</p>
+      <br/>
+      <p>{t('p2')}</p>
 
-      <h4>Условия оплаты:</h4>
+      {/* <h4>Условия оплаты:</h4>
       <ul>
         <li>Полная стоимость аренды уплачивается при получении машины</li>
         <li>Гарантийный депозит в размере 500 долларов вносится при получении машины и возвращается клиенту при возврате машины</li>
@@ -71,7 +85,7 @@ const CarTerms: React.FC = () => {
         <li>домкрат</li>
       </ul>
       
-      <p>При необходимости можем предоставить трос, лопаты, детские кресло</p>
+      <p>При необходимости можем предоставить трос, лопаты, детские кресло</p> */}
     </div>
   );
 };

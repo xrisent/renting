@@ -3,13 +3,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
-    &__short-info{
-        display: flex;
-        justify-content: space-evenly;
-        flex-direction: column;
-        margin-bottom: 20px;
-        height: 15%;
-        gap: 10px;
-    }
+    gap: 20px;
+    margin-bottom: 20px;
 }
