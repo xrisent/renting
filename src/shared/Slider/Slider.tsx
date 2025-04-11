@@ -8,7 +8,6 @@ interface SliderProps {
 }
 
 const Slider: React.FC<SliderProps> = React.memo(({ images }) => {
-    // Memoize the mapped images to avoid unnecessary re-renders
     const slides = useMemo(() => 
         images.map((image, index) => (
             <SwiperSlide
@@ -33,5 +32,7 @@ const Slider: React.FC<SliderProps> = React.memo(({ images }) => {
         </Swiper>
     );
 });
+
+Slider.displayName = 'Slider';
 
 export default Slider;

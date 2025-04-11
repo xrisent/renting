@@ -18,7 +18,9 @@
         "startDateError": "Please select a start date",
         "endDateError": "Please select an end date",
         "peopleCountError": "Please enter the number of people",
-        "messageError": "Please enter a message"
+        "messageError": "Please enter a message",
+
+        "loading": "Waiting for response"
     },
 
     "CarList":{

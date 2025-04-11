@@ -57,38 +57,46 @@ export default function FormForRent() {
       validationSchema={validationSchema}
       onSubmit={handleSubmit}
     >
-      {({ errors, touched }) => ( // eslint-disable-line @typescript-eslint/no-unused-vars
-        <Form className="form__component">
-          <Field label={t('fullName')} name="fullName" component={InputForForm} required />
-          <ErrorMessage name="fullName" component="div" className="error-message" />
+      {({ errors, touched, isSubmitting }) => (
+        <>
+          <div className={`form-overlay ${isSubmitting ? 'visible' : ''}`}>
+            {t('loading')}...
+          </div>
 
-          <Field label={t('phone')} name="phone" type="tel" component={InputForForm} required />
-          <ErrorMessage name="phone" component="div" className="error-message" />
 
-          <Field label={t('email')} name="email" type="email" component={InputForForm} required />
-          <ErrorMessage name="email" component="div" className="error-message" />
+          <Form className="form__component">
+            <Field label={t('fullName')} name="fullName" component={InputForForm} required />
+            <ErrorMessage name="fullName" component="div" className="error-message" />
 
-          <h5>{t("date")}</h5>
-          <p className='small-p'>{t('from')}</p>
-          <Field label={t('startDate')} name="startDate" type="date" component={InputForForm} required />
-          <ErrorMessage name="startDate" component="div" className="error-message" />
+            <Field label={t('phone')} name="phone" type="tel" component={InputForForm} required />
+            <ErrorMessage name="phone" component="div" className="error-message" />
 
-          <p className='small-p'>{t('to')}</p>
-          <Field label={t('endDate')} name="endDate" type="date" component={InputForForm} required />
-          <ErrorMessage name="endDate" component="div" className="error-message" />
+            <Field label={t('email')} name="email" type="email" component={InputForForm} required />
+            <ErrorMessage name="email" component="div" className="error-message" />
 
-          <h5>{t('peopleCount')}</h5>
-          <Field label={t('peopleCount')} name="peopleCount" type="number" component={InputForForm} required min="1" />
-          <ErrorMessage name="peopleCount" component="div" className="error-message" />
+            <h5>{t("date")}</h5>
+            <p className='small-p'>{t('from')}</p>
+            <Field label={t('startDate')} name="startDate" type="date" component={InputForForm} required />
+            <ErrorMessage name="startDate" component="div" className="error-message" />
 
-          <Field label={t('message')} name="message" component={TextAreaForForm} rows={4} />
-          <ErrorMessage name="message" component="div" className="error-message" />
+            <p className='small-p'>{t('to')}</p>
+            <Field label={t('endDate')} name="endDate" type="date" component={InputForForm} required />
+            <ErrorMessage name="endDate" component="div" className="error-message" />
 
-          <button type="submit" className="submit-button">
-          {t('submit')}
-          </button>
-        </Form>
+            <h5>{t('peopleCount')}</h5>
+            <Field label={t('peopleCount')} name="peopleCount" type="number" component={InputForForm} required min="1" />
+            <ErrorMessage name="peopleCount" component="div" className="error-message" />
+
+            <Field label={t('message')} name="message" component={TextAreaForForm} rows={4} />
+            <ErrorMessage name="message" component="div" className="error-message" />
+
+            <button type="submit" className="submit-button" disabled={isSubmitting}>
+              {t('submit')}
+            </button>
+          </Form>
+        </>
       )}
     </Formik>
+
   );
 }
