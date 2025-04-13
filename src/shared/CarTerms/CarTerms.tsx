@@ -20,8 +20,6 @@ const CarTerms: React.FC = () => {
         <li>{t("li8")}</li>
       </ul>
       <br/>
-      <p>{t('p1')}</p>
-      <br/>
       <p>{t('p2')}</p>
 
       {/* <h4>Условия оплаты:</h4>

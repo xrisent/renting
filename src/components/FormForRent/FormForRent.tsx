@@ -8,10 +8,12 @@ import TextAreaForForm from "@/shared/TextAreaForForm/TextAreaForForm";
 import { FormValues } from '@/entities/formProps';
 import { useTranslations } from 'next-intl'
 import axios from 'axios';
+import { useEffect, useState } from 'react';
 
 export default function FormForRent() {
-  
-  const t = useTranslations("Form")
+  const t = useTranslations("Form");
+  const [formError, setFormError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const initialValues: FormValues = {
     fullName: "",
@@ -37,8 +39,10 @@ export default function FormForRent() {
     message: Yup.string(),
   });
 
-
   const handleSubmit = async (values: FormValues, { resetForm }: { resetForm: () => void }) => {
+    setFormError(false);
+    setIsLoading(true);
+  
     try {
       const response = await axios.post('/api/notify', JSON.stringify(values), {
         headers: { 'Content-Type': 'application/json' }
@@ -46,10 +50,27 @@ export default function FormForRent() {
   
       console.log('Form sent successfully:', response.data);
       resetForm();
-    } catch (error) {
-      console.error('Error sending form:', error);
+    } catch {
+      setFormError(true);
+      setTimeout(() => setFormError(false), 2000);
+    } finally {
+      setIsLoading(false);
     }
   };
+  
+  useEffect(() => {
+    const shouldBlockScroll = isLoading || formError;
+  
+    if (shouldBlockScroll) {
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
+  
+    return () => {
+      document.body.classList.remove('no-scroll');
+    };
+  }, [isLoading, formError]);
 
   return (
     <Formik
@@ -57,12 +78,11 @@ export default function FormForRent() {
       validationSchema={validationSchema}
       onSubmit={handleSubmit}
     >
-      {({ errors, touched, isSubmitting }) => (
+      {({ isSubmitting }) => (
         <>
-          <div className={`form-overlay ${isSubmitting ? 'visible' : ''}`}>
-            {t('loading')}...
+          <div className={`form-overlay ${isSubmitting || formError ? 'visible' : ''}`}>
+            {isSubmitting ? `${t('loading')}...` : formError ? t('submitError') : ""}
           </div>
-
 
           <Form className="form__component">
             <Field label={t('fullName')} name="fullName" component={InputForForm} required />
@@ -97,6 +117,5 @@ export default function FormForRent() {
         </>
       )}
     </Formik>
-
   );
 }

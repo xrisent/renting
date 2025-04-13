@@ -4,7 +4,7 @@ import axios from 'axios';
 import nodemailer from 'nodemailer';
 
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
-const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
+const TELEGRAM_CHAT_IDS = process.env.TELEGRAM_CHAT_ID?.split(',') || [];
 
 const EMAIL_FROM = process.env.EMAIL_FROM;
 const EMAIL_PASS = process.env.EMAIL_PASS;
@@ -35,9 +35,11 @@ export async function POST(req: NextRequest) {
 
     const telegramUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
 
-    const telegramPromise = axios.post(telegramUrl, {
-      chat_id: TELEGRAM_CHAT_ID,
-      text,
+    const telegramPromises = TELEGRAM_CHAT_IDS.map(chatId => {
+      return axios.post(telegramUrl, {
+        chat_id: chatId.trim(),
+        text,
+      });
     });
 
     const transporter = nodemailer.createTransport({
@@ -57,7 +59,7 @@ export async function POST(req: NextRequest) {
 
     const emailPromise = transporter.sendMail(mailOptions);
 
-    await Promise.all([telegramPromise, emailPromise]);
+    await Promise.all([...telegramPromises, emailPromise]);
 
     return NextResponse.json({ success: true });
   } catch (error) {

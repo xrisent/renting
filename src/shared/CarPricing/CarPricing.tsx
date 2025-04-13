@@ -10,12 +10,9 @@ const CarPricing: React.FC<{car: CarProps}> = ({ car }) => {
 
   return (
     <div className="car-pricing">
-      <h3>Цена</h3>
+      <h3>{t('priceName')}</h3>
       <ul>
         <li><strong>{t("days1")}:</strong> ${car.pricePerDay}</li>
-        <li><strong>{t("days3")}:</strong> ${car.priceFor5Days}</li>
-        <li><strong>{t("days6")}:</strong> ${car.priceFor10Days}</li>
-        <li><strong>{t("days10")}:</strong> {t("days10terms")}</li>
       </ul>
       <br/>
       <p>{t('p1')}</p>

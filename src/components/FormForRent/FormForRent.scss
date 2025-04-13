@@ -67,3 +67,7 @@
       visibility: visible;
     }
   }
+
+  body.no-scroll {
+    overflow: hidden;
+  }

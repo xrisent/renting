@@ -20,7 +20,8 @@
         "peopleCountError": "Please enter the number of people",
         "messageError": "Please enter a message",
 
-        "loading": "Waiting for response"
+        "loading": "Waiting for response",
+        "submitError": "Error. Please, check your information"
     },
 
     "CarList":{
@@ -29,6 +30,8 @@
 
     "CarDescription": {
         "name": "Car rental with driver",
+
+        "detailsName": "Details of",
 
         "engineVolume": "Engine Volume",
         "petrolType": "Fuel Type",
@@ -43,11 +46,12 @@
         "li6": "Trips to the ski resort in Karakol",
         "li7": "Trips to any point in Kyrgyzstan",
         "li8": "We also provide transfer services throughout Kyrgyzstan",
-        "p1": "The car is equipped with Starlink, allowing internet access from any location in Kyrgyzstan",
         "p2": "We strive to make every trip comfortable, harmonious, interesting, and most importantly, safe for all our clients"
     },
 
     "CarPrice": {
+        "priceName": "Price",
+
         "days1": "Price for 24 hours with our driver and fuel",
         "days3": "Price for 3 days with our driver and fuel",
         "days6": "Price for 6 days with our driver and fuel",
