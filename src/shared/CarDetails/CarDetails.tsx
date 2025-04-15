@@ -17,7 +17,7 @@ const CarDetails: React.FC<{car: CarProps}> = ({ car }) => {
         <li><strong>{t("engineVolume")}:</strong> {car.engineVolume} L</li>
         <li><strong>{t("petrolType")}:</strong> {car.fuelType}</li>
         <li><strong>{t("seats")}:</strong> {car.seats}</li>
-        <li><strong>Starlink</strong> 24/7</li>
+        <li><strong>Starlink:</strong> 24/7</li>
         {/* <li><strong>Трансмиссия:</strong> {car.transmission}</li>
         <li><strong>Интерьер:</strong> {car.interior}</li> */}
       </ul>
