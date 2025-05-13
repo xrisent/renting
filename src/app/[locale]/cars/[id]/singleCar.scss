@@ -1,0 +1,35 @@
+#singleCarSection{
+    min-height: 100vh;
+    background: url('/images/bg.webp') top/cover no-repeat;
+    position: relative;
+
+    .container{
+        height: 100%;
+    }
+
+    .singleCarSection__box{
+        display: flex;
+        justify-content: space-between;
+        padding-top: 50px;
+        flex-wrap: wrap;
+        gap: 20px;
+        height: 100%;
+        margin-bottom: 20px;
+    
+        &__info{
+            width: 65%;
+            display: flex;
+            flex-direction: column;
+        }
+    
+    }
+
+    ul{
+        list-style:disc;
+        li{
+            list-style:disc;
+        }
+    }
+    
+}
+

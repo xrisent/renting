@@ -4,7 +4,7 @@ FROM node:18 AS builder
 # Установим рабочую директорию
 WORKDIR /app
 
-# Копируем package.json и package-lock.json (или yarn.lock)
+# Копируем package.json и package-lock.json
 COPY package*.json ./ 
 
 # Установим зависимости

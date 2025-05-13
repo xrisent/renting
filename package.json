@@ -4,21 +4,32 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint",
     "migrate": "prisma migrate deploy"
   },
   "dependencies": {
     "@prisma/client": "^6.5.0",
+    "axios": "^1.8.4",
+    "formik": "^2.4.6",
+    "i18next": "^24.2.3",
     "next": "15.2.3",
+    "next-connect": "^1.0.0",
+    "next-i18next": "^15.4.2",
+    "next-intl": "^4.0.2",
+    "nodemailer": "^6.10.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "sass": "^1.86.0"
+    "react-i18next": "^15.4.1",
+    "sass": "^1.86.0",
+    "swiper": "^11.2.6",
+    "yup": "^1.6.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@types/node": "^20",
+    "@types/nodemailer": "^6.4.17",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",

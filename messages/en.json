@@ -1,0 +1,67 @@
+{
+    "Form": {
+        "fullName": "Full Name",
+        "phone": "Phone",
+        "email": "Email",
+        "date": "Select dates",
+        "startDate": "Start Date",
+        "from": "From",
+        "to": "To",
+        "endDate": "End Date",
+        "peopleCount": "People Count",
+        "message": "Message",
+        "submit": "Submit",
+
+        "fullNameError": "Please enter your full name",
+        "phoneError": "Please enter your phone number",
+        "emailError": "Please enter a valid email",
+        "startDateError": "Please select a start date",
+        "endDateError": "Please select an end date",
+        "peopleCountError": "Please enter the number of people",
+        "messageError": "Please enter a message",
+
+        "loading": "Waiting for response",
+        "submitError": "Error. Please, check your information"
+    },
+
+    "CarList":{
+        "price": "Price starts with:"
+    },
+
+    "CarDescription": {
+        "name": "Car rental with driver",
+
+        "detailsName": "Details of",
+
+        "engineVolume": "Engine Volume",
+        "petrolType": "Fuel Type",
+        "seats": "Seats",
+
+        "h4": "Our services include",
+        "li1": "Airport pickup",
+        "li2": "Bus station pickup",
+        "li3": "Pickup from Kyrgyzstan state borders",
+        "li4": "Transport to business, ceremonial meetings, etc.",
+        "li5": "Trips to Issyk-Kul Lake",
+        "li6": "Trips to the ski resorts",
+        "li7": "Trips to any point in Kyrgyzstan",
+        "li8": "We also provide transfer services throughout Kyrgyzstan",
+        "p2": "We strive to make every trip comfortable, harmonious, interesting, and most importantly, safe for all our clients"
+    },
+
+    "CarPrice": {
+        "priceName": "Price",
+
+        "days1": "Price for 24 hours with our driver",
+        "days3": "Price for 3 days with our driver",
+        "days6": "Price for 6 days with our driver",
+        "days10": "Price for 10 or more days",
+        "days10terms": "Negotiated with possible discounts",
+        "p1": "We accept payments via Visa card, ELKART",
+        "p2": "Discount program available for regular customers"
+    },
+
+    "MainPage":{
+        "name": "Main"
+    }
+}
