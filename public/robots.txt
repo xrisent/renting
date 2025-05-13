@@ -1,0 +1,3 @@
+User-Agent: *
+Allow: /
+Sitemap: https://khagan-auto.com/sitemap.xml

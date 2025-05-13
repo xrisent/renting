@@ -10,8 +10,19 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
-        source: '/:locale',
-        destination: '/:locale/cars/1',
+        source: '/en',
+        destination: '/en/cars/1',
+        has: [
+          {
+            type: 'header',
+            key: 'accept-language',
+          },
+        ],
+        permanent: false,
+      },
+      {
+        source: '/ru',
+        destination: '/ru/cars/1',
         has: [
           {
             type: 'header',
@@ -21,7 +32,8 @@ const nextConfig: NextConfig = {
         permanent: false,
       },
     ];
-  },
+  }
+  
 };
 
 export default withNextIntl(nextConfig);

@@ -1,7 +1,6 @@
-version: '3.8'
+version: '3.1'
 
 services:
-  # Сервис для PostgreSQL
   db:
     image: postgres:13
     environment:
@@ -12,23 +11,55 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+    networks:
+      - app-network
 
-  # Сервис для приложения
   app:
     build: .
     environment:
       DATABASE_URL: postgresql://rent_admin:rent_admin@db:5432/bd_rent?schema=public
+      NODE_ENV: production
     ports:
       - "3000:3000"
     depends_on:
       - db
+    restart: unless-stopped
+    networks:
+      - app-network
     command: >
       sh -c "
-        npm install &&
-        npx prisma migrate dev --name init &&
-        npx prisma migrate deploy && 
-        npm run dev
+      npx prisma migrate deploy &&
+      npm run start
       "
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./certbot/www:/var/www/certbot
+      - ./certbot/conf:/etc/letsencrypt
+    depends_on:
+      - app
+    restart: unless-stopped
+    networks:
+      - app-network
+
+  certbot:
+    image: certbot/certbot
+    volumes:
+      - ./certbot/www:/var/www/certbot
+      - ./certbot/conf:/etc/letsencrypt
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+    networks:
+      - app-network
 
 volumes:
   postgres_data:
+
+networks:
+  app-network:
+    driver: bridge

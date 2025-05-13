@@ -10,7 +10,7 @@ export const Footer: React.FC = () => {
     return <footer>
         <div className="container">
             <div className="footer__box">
-                <Logo width='70px'/>
+                <Logo width='70px' header={false}/>
                 <ContactInfo />
             </div>
         </div>

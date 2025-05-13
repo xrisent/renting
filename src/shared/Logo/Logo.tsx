@@ -4,9 +4,10 @@ import { useRouter } from "next/navigation";
 
 interface Props {
   width: string;
+  header: boolean;
 }
 
-export const Logo: React.FC<Props> = ({ width }) => {
+export const Logo: React.FC<Props> = ({ width, header }) => {
   const router = useRouter();
 
   return (
@@ -18,7 +19,7 @@ export const Logo: React.FC<Props> = ({ width }) => {
         height={70}
         style={{ background: "transparent" }}
       />
-      <h5>KHaGaN Auto</h5>
+      {header?<h1>KHaGaN Auto</h1>:<h5>KHaGaN Auto</h5>}
     </div>
   );
 };

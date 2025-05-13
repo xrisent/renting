@@ -19,7 +19,7 @@ export const Banner: React.FC<Props> = ({ images, page }) => {
             <div className="container">
                 <div className="bannerComponent__box">
                     <Slider images={images} />
-                    <h1>{t('name') ?? 'Default Name'}</h1>
+                    <h2>{t('name') ?? 'Default Name'}</h2>
                 </div>
             </div>
         </section>

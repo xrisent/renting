@@ -52,9 +52,9 @@
     "CarPrice": {
         "priceName": "Price",
 
-        "days1": "Price for 24 hours with our driver and fuel",
-        "days3": "Price for 3 days with our driver and fuel",
-        "days6": "Price for 6 days with our driver and fuel",
+        "days1": "Price for 24 hours with our driver",
+        "days3": "Price for 3 days with our driver",
+        "days6": "Price for 6 days with our driver",
         "days10": "Price for 10 or more days",
         "days10terms": "Negotiated with possible discounts",
         "p1": "We accept payments via Visa card, ELKART",

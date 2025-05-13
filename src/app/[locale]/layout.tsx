@@ -21,14 +21,16 @@ export default async function LocaleLayout({
     <html lang={locale}>
       <head>
         <title>KHaGaN Auto</title>
-        <meta name="description" content="Аренда автомобилей с водителем" />
+        <meta name="description" content="Аренда автомобилей с водителем | khagan auto" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="index, follow" />
         <meta charSet="UTF-8" />
         <meta name="theme-color" content="#000000" />
-        <meta name="author" content="KHaGaN Auto" />
-        <meta name="keywords" content="car rental with driver, rent a car with driver, chauffeur service, private driver, car hire with driver, driver service, taxi service, renting cars with driver, driver included, transport service, аренда авто с водителем, аренда автомобиля с водителем, авто с водителем, машина с водителем, услуги водителя, частный водитель, аренда машины, аренда машины с водителем, транспорт с водителем, айдоочусу менен унаа ижарасы, айдоочусу менен авто ижара, айдоочу кызматтары, жеке айдоочу, унаа ижарасы, такси кызматтары, авто ижара, авто кызматтар, унаа айдоочу менен" />
+        <meta name="author" content="KHaGaN Auto"/>
+        <meta name="keywords" content="car rental with driver, rent a car with driver, chauffeur service, private driver, car hire with driver, driver service, taxi service, renting cars with driver, driver included, transport service, аренда авто с водителем, аренда автомобиля с водителем, авто с водителем, машина с водителем, услуги водителя, частный водитель, аренда машины, аренда машины с водителем, транспорт с водителем, айдоочусу менен унаа ижарасы, айдоочусу менен авто ижара, айдоочу кызматтары, жеке айдоочу, унаа ижарасы, такси кызматтары, авто ижара, авто кызматтар, унаа айдоочу менен, khagan auto, khagan, auto" />
         
-        <link rel="icon" href="/images/logobg.ico" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="manifest" href="/manifest.json" />
       </head>
       <body>
         <NextIntlClientProvider>

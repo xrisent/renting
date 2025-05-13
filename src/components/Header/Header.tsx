@@ -11,7 +11,7 @@ const Header: React.FC = () => {
         <header>
             <div className="container">
                 <div className="header__box">
-                    <Logo width={"70px"} />
+                    <Logo width={"70px"} header={true}/>
                     <div className="header__box-right">
                         <ContactInfo />
                         <LanguageSwitcher />
